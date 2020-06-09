@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
         if (timer <= 0)
         {
             //SceneManager.LoadScene(sceneToLoad); //se pia skinh na se pernei
-            Timeout = 1;
+            //Timeout = 1;
         }
 
     }
