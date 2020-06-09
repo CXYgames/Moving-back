@@ -2,8 +2,8 @@
 
  Playmode
  --------
- 1.You can play it with your fingers on the phone
- 2.It is a droping game that you have to collect the coins for bonus and fruits(banana) to win the level
+ 1. You can play it with your fingers on the phone
+ 2. It is a droping game that you have to collect the coins for bonus and fruits(banana) to win the level
  3. You have 3 lifes and in every round you have arround 5 seconds(i dont know if its a good idea) to think how to drop the ball(animal)
 
 UPDATE 09/06/2020
