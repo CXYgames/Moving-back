@@ -53,19 +53,19 @@ public class SwipeScript : MonoBehaviour {
 			rb.AddForce (-direction/timeInterval * throwForse);
 
 
-			timeout = Timer.Timeout;					//FERE THN Timeout apo to Timer**********************
+			//timeout = Timer.Timeout;					//FERE THN Timeout apo to Timer**********************
 			// THREE attempt to throw a ball only
-			if (attemps > 0 || timeout=1)
-            {
-				attemps = attemps - 1;
-				SetCountText();
-				timeout = 0;
+			//if (attemps > 0 || timeout=1)
+           // {
+				//attemps = attemps - 1;
+				//SetCountText();
+				//timeout = 0;
 
-			}
-			else
-            {
-				throwAllowed = false;
-            }
+			//}
+			//else
+            //{
+			//	throwAllowed = false;
+            //}
 			
 
 		}
