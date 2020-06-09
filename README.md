@@ -8,7 +8,7 @@
 
 UPDATE 09/06/2020
 ------------------
-1. I had menu but i delete the scene
+1. It is working
 2. The GaceOver scene it was only for check that timeout it is working properly (The right way it is appearing when you lose 3 lifes )
 3. Darg Drop method it is working but in this update i have made a try to transfer time from one script to the script that have lifes and not working now. IF you want to see it how its running the game just delete the lines that transfering time from the scene with time and at below the "||" at "if" at attemps
 4. I saw from others tutorial to must have a central place (in start mode in menu) with those variables(lifes , coins) to be stored and not loosing and reset in every scene.  (is it right?)
