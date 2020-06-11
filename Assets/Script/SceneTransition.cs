@@ -6,12 +6,23 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     public string sceneToLoad;
+
+    private int attemps;
+
     // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player")&& !other.isTrigger)
         {
-            SceneManager.LoadScene(sceneToLoad);
+        givealife();
+        SceneManager.LoadScene(sceneToLoad);
         }
+    }
+
+    public void givealife()
+    {
+        attemps = PlayerPrefs.GetInt("Lives");
+        attemps = attemps + 1;
+        PlayerPrefs.SetInt("Lives", attemps);
     }
 }

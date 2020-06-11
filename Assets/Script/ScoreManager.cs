@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public TextMeshProUGUI text;
-    static int score=0;
+    static int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         }
         //Deixnei to score sthn epomenh scene xwris na grafei 0
+        score = PlayerPrefs.GetInt("Score");
         text.text = "X" + score.ToString();
     }
 
@@ -22,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     public void ChangeScore(int coinValue)
     {
         score = score+ coinValue;
+        PlayerPrefs.SetInt("Score", score);
         text.text = "X" + score.ToString(); //SOU deixnei to score meta to X
     }
     void Update()

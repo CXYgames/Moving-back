@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class SwipeScript : MonoBehaviour {
 
 	Vector2 startPos, endPos, direction; // touch start position, touch end position, swipe direction
-	public float attemps=3;
+	//private float attemps=3;
+	private int attemps;
 	public Text lifeText;//lifescore
 	float touchTimeStart, touchTimeFinish, timeInterval; // to calculate swipe time
 	private int timeout;
@@ -19,6 +21,7 @@ public class SwipeScript : MonoBehaviour {
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D> (); // Get RigidBody2D component
+		attemps = PlayerPrefs.GetInt("Lives");
 		SetCountText();
 	}
 
@@ -56,20 +59,23 @@ public class SwipeScript : MonoBehaviour {
 			//timeout = Timer.Timeout;					//FERE THN Timeout apo to Timer**********************
 			// THREE attempt to throw a ball only
 			//if (attemps > 0 || timeout=1)
-           // {
-				//attemps = attemps - 1;
-				//SetCountText();
-				//timeout = 0;
 
-			//}
-			//else
-            //{
-			//	throwAllowed = false;
-            //}
+			if (attemps > 0 )
+			 {
+			StartCoroutine(waitbeforshow());
+			//attemps = attemps - 1;
+			//PlayerPrefs.SetInt("Lives", attemps);
+			//SetCountText();
 			
+			//timeout = 0;
 
+			}
+			else
+			{
+				throwAllowed = false;
+				SceneManager.LoadScene("GameOver");
+			}
 		}
-			
 	}
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -78,6 +84,14 @@ public class SwipeScript : MonoBehaviour {
 
 	void SetCountText()
     {
-		lifeText.text = "Life: " + attemps.ToString();
+		lifeText.text = "X " + attemps.ToString();
     }
+
+	IEnumerator waitbeforshow()
+    {
+		attemps = attemps - 1;
+		PlayerPrefs.SetInt("Lives", attemps);
+		yield return new WaitForSeconds(2);
+		SetCountText();
+	}
 }
