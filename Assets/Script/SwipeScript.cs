@@ -14,7 +14,7 @@ public class SwipeScript : MonoBehaviour {
 	bool throwAllowed = true; // throw allowed bool variable to let ball be thrown only once per attempt
 
 	[Range (0.05f, 1f)] 			// slider for inspector window
-	public float throwForse = 0.3f; // to control throw forse
+	 public float throwForse = 0.30f; // to control throw forse
 
 	void Start()
 	{
@@ -56,6 +56,7 @@ public class SwipeScript : MonoBehaviour {
 			//timeout = Timer.Timeout;					//FERE THN Timeout apo to Timer**********************
 			// THREE attempt to throw a ball only
 			//if (attemps > 0 || timeout=1)
+<<<<<<< Updated upstream
            // {
 				//attemps = attemps - 1;
 				//SetCountText();
@@ -68,6 +69,20 @@ public class SwipeScript : MonoBehaviour {
             //}
 			
 
+=======
+
+			if (attemps > 0 )
+			 {
+			StartCoroutine(waitbeforshow());
+			
+
+			}
+			else
+			{
+				throwAllowed = false;
+				SceneManager.LoadScene("GameOver");
+			}
+>>>>>>> Stashed changes
 		}
 			
 	}
